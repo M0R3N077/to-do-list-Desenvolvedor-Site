@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+   <link rel="shortcut icon" href="morenosFavIcon.ico" type="image/x-icon">
+    <title>To-Do List Desenvolvedor</title>
+    
+</head>
+<body>
+    <header>
+       <!-- Barra de navegação -->
+       <nav class="navbar">
+        <!-- Logo da empresa no lado esquerdo -->
+        <div class="logo">
+            <img src="logoReal.png" alt="Logo da Empresa">
+            <div id="logo-name">Moreno's</div>
+        </div>
+        
+        <!-- Itens de navegação principais (centro) -->
+        <ul class="nav-links">
+            <li><a href="#">Calendário</a></li>
+            <li><a href="#">Tarefas Pendentes</a></li>
+            <li><a href="#">Histórico de Tarefas</a></li>
+        </ul>
+
+        <!-- Itens de navegação do lado direito (Idioma e Perfil) -->
+        <div class="nav-right">
+            <div class="icon">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
+                        <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z"/>
+                        <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31"/>
+                      </svg>
+                </a>
+            </div>
+            <div class="divider"></div> <!-- Divisória visual -->
+            <div class="help">
+                <a href="#">Ajuda</a>
+            </div>
+            <div class="profile">
+                <a href="#">Perfil</a>
+            </div>
+        </div>
+    </nav>
+
+
+        <h1>Lista de Tarefas do Desenvolvedor
+        </h1>
+       
+    </header>
+
+    <main>
+        <section class="todo-container">
+            <h2>Minhas Tarefas Gerais</h2>
+            <div class="task-input">
+                <input type="text" id="new-task" placeholder="Adicionar nova tarefa...">
+                <button id="add-task">Adicionar</button>
+            </div>
+            <ul id="task-list"></ul>
+        </section>
+    </main>
+
+   <!-- Texto com bloco de código estilizado -->
+   <div class="code-block">
+    <code>
+      &lt;<span class="tag">div</span> <span class="attribute">class</span>=<span class="string">&quot;organization&quot;</span>&gt;<br>
+      &nbsp;&nbsp;&lt;<span class="tag">p</span>&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">&lt;!-- Organização é a chave para o sucesso --&gt;</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;Desenvolvedor, organizar suas tarefas é essencial para um melhor desempenho.<br>
+      &nbsp;&nbsp;&lt;/<span class="tag">p</span>&gt;<br>
+      &lt;/<span class="tag">div</span>&gt;
+    </code>
+  </div>
+
+   <!-- Nova seção de matérias de programação -->
+   <section class="programming-section">
+    <h2>Tarefas em Linguagens Específicas</h2>
+    <div class="subjects-grid">
+        <!-- Quadrados para cada matéria -->
+        <div class="subject">
+            <h3>Java</h3>
+            <div class="task-input">
+                <input type="text" id="new-task-java" placeholder="Adicionar tarefa de Java...">
+                <button id="add-task-java">Adicionar</button>
+            </div>
+            <ul id="task-list-java"></ul>
+        </div>
+        <div class="subject">
+            <h3>Python</h3>
+            <div class="task-input">
+                <input type="text" id="new-task-python" placeholder="Adicionar tarefa de Python...">
+                <button id="add-task-python">Adicionar</button>
+            </div>
+            <ul id="task-list-python"></ul>
+        </div>
+        <div class="subject">
+            <h3>JavaScript</h3>
+            <div class="task-input">
+                <input type="text" id="new-task-js" placeholder="Adicionar tarefa de JavaScript...">
+                <button id="add-task-js">Adicionar</button>
+            </div>
+            <ul id="task-list-js"></ul>
+        </div>
+        <div class="subject">
+            <h3>HTML</h3>
+            <div class="task-input">
+                <input type="text" id="new-task-html" placeholder="Adicionar tarefa de HTML...">
+                <button id="add-task-html">Adicionar</button>
+            </div>
+            <ul id="task-list-html"></ul>
+        </div>
+        <div class="subject">
+            <h3>CSS</h3>
+            <div class="task-input">
+                <input type="text" id="new-task-css" placeholder="Adicionar tarefa de CSS...">
+                <button id="add-task-css">Adicionar</button>
+            </div>
+            <ul id="task-list-css"></ul>
+        </div>
+        <div class="subject">
+            <h3>SQL</h3>
+            <div class="task-input">
+                <input type="text" id="new-task-cpp" placeholder="Adicionar tarefa de SQL...">
+                <button id="add-task-cpp">Adicionar</button>
+            </div>
+            <ul id="task-list-cpp"></ul>
+        </div>
+    </div>
+
+    <!-- Botão "Alterar Grade de Linguagens" -->
+    <button id="change-language-grade">Alterar Grade de Linguagens</button>
+</section>
+
+<!-- Modal para Alterar Linguagem -->
+<div id="language-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Alterar Linguagem</h2>
+        <label for="current-language">Selecione a linguagem para alterar:</label>
+        <select id="current-language">
+            <option value="Java">Java</option>
+            <option value="Python">Python</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="SQL">SQL</option>
+        </select>
+        <br><br>
+        <label for="new-language">Nova linguagem:</label>
+        <input type="text" id="new-language" placeholder="Digite o nome da nova linguagem">
+        <br><br>
+        <button id="confirm-change">Confirmar Alteração</button>
+    </div>
+</div>
+
+    <!-- Novo bloco de código em Java -->
+<div class="code-block-java">
+    <code>
+      <span class="keyword">public</span> <span class="keyword">class</span> <span class="class-name">Tasks</span> {<br>
+      &nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="function-name">main</span>(<span class="type">String</span>[] <span class="variable">args</span>) {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> (<span class="variable">organizacao</span> >= 100) {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">desempenho</span>++;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+      &nbsp;&nbsp;}<br>
+      }
+    </code>
+  </div>  
+
+    <footer>
+        <nav class="navbar-social-media">
+            <div class="instagram">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                      </svg>
+                </a>
+            </div>
+            <div class="twitter-x">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                        <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                      </svg>
+                </a>
+            </div>
+            <div class="youtube">
+                <a href="#">
+                    <div class="youtube">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                            <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+                          </svg>
+                    </div>
+                </a>
+            </div>
+    </nav>
+        <p class="end">"O que sabemos é uma gota, o que ignoramos é um oceano." - Isaac Newton</p>
+        <p class="copy">&copy; 2024 Murilo Moreno</p> <!-- Copyright adicionado -->
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

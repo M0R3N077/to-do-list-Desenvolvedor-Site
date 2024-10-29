@@ -1,0 +1,680 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Gemstone';
+    src: url(Gemstone.ttf) format(truetype);
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace; /* Fonte monoespaçada para estilo de programação */
+    background: #000;
+    /*Cria um gradiente linear que se move na direção de 135 graus (diagonal).
+Transiciona suavemente entre as cores roxo, azul, verde-água, e lilás.
+Gera um fundo dinâmico e moderno, que se adapta bem ao estilo do seu site.*/
+    background: linear-gradient(135deg, #6700c7, #5da2bd, #3f9e7e, #9e949e);
+    background-size: 300% 300%;
+    animation: gradient 10s ease infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+}
+
+/* Animação do degradê */
+/* Animação do fundo em gradiente, movimentando as cores */
+@keyframes gradient {
+    0% { background-position: 0% 50%; } /* Posição inicial */
+    25% { background-position: 50% 50%; } /* Posição intermediária */
+    50% { background-position: 100% 50%; } /* Posição centralizada */
+    75% { background-position: 50% 50%; } /* Outra posição intermediária */
+    100% { background-position: 0% 50%; } /* Volta à posição inicial */
+}
+
+header {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #87ceeb; /* Tom mais suave de azul */
+    text-align: center;
+    box-shadow: 0px 1rem 2rem rgba(0, 0, 0, 0.6); /*Essa propriedade é usada para adicionar uma sombra em torno de um elemento.*/
+    margin-bottom: 6rem;
+}
+
+/* Estilos da barra de navegação */
+.navbar {
+    background-color: rgba(83, 80, 80, 0.9); 
+    padding: 0.75rem 2rem; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    border-radius: 10px; 
+    margin-bottom: 1rem; 
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Estilo da logo na esquerda */
+.logo img {
+    height: 65px; /* Ajuste de altura para a logo */
+    width: auto; /* Proporção automática */
+}
+
+#logo-name{
+    font-family: 'Gemstone';
+    color: #fff;
+    font-size: 3rem;
+    margin-left: .75rem;;
+}
+
+/* Links principais no centro */
+.nav-links {
+    list-style: none; /* Remove os marcadores */
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px; 
+}
+
+.nav-links a {
+    color: #accfdd; 
+    text-decoration: none; /* Remove sublinhado */
+    font-size: 1.1rem; 
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #d8bfd8;
+}
+
+/* Itens do lado direito (Idioma e Perfil) */
+.nav-right {
+    display: flex;
+    align-items: center; 
+}
+.icon a {
+    color: #accfdd;
+    margin-right: 30px;
+    transition: color 0.3s ease;
+}
+
+.icon a:hover {
+    color: #d8bfd8;
+}
+
+
+.help a {
+    color: #accfdd;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-right: 30px; 
+    transition: color 0.3s ease;
+}
+
+.help a:hover {
+    color: #d8bfd8;
+}
+
+
+.divider {
+    height: 30px; 
+    width: 2px; 
+    background-color: #accfdd; 
+    margin-right: 30px; 
+}
+
+.profile a {
+    color: #accfdd;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.profile a:hover {
+    color: #d8bfd8;
+}
+
+
+h1 {
+    font-size: 2rem;
+    color: #d8bfd8; 
+}
+
+h3 {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    color: #66cdaa; 
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1; /*O elemento pode crescer para ocupar qualquer espaço extra disponível no contêiner flexível*/
+    width: 100%;
+    padding: 2rem;
+    position: relative; /*mantém o elemento no fluxo normal da página, mas permite ajustes de posição (via top, right, bottom, left), movendo-o relativamente à sua posição original*/
+}
+
+.todo-container {
+    background-color: rgba(30, 30, 30, 0.95); /* Fundo escuro e discreto */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 6px 23px rgba(125, 0, 241, 0.87); /*Essa propriedade é usada para adicionar uma sombra em torno de um elemento.*/
+    max-width: 600px; /*limita a largura do elemento a no máximo 600 pixels, tornando-o responsivo e adequado para diferentes tamanhos de tela.*/
+    width: 100%;
+    z-index: 2; /*coloca o elemento em uma camada superior, acima de outros elementos com um valor de z-index menor ou sem z-index*/
+    text-align: center;
+    margin-top: .5rem;
+}
+
+/* Centralizando a seção de tarefas gerais */
+#main-tasks {
+    display: flex;
+    justify-content: center;   /* Centraliza horizontalmente */
+    align-items: center;       /* Centraliza verticalmente */
+    height: 100vh;             /* Ocupará a altura total da tela */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #87ceeb; /* Azul suave */
+}
+
+.task-input {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.task-input input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #111;
+    color: white;
+}
+
+.task-input button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #66cdaa;
+    color: black;
+    border: none; /*remove qualquer borda que o elemento possa ter, seja por padrão ou por estilos anteriores*/
+    border-radius: 5px;
+    cursor: pointer; /*muda o cursor para o ícone de mão, sugerindo que o elemento é interativo ou clicável.*/
+    margin-left: 0.5rem;
+    transition: background-color 0.3s ease;  /*cria uma animação suave de 0.3 segundos quando a cor de fundo do elemento muda*/
+}
+
+.task-input button:hover {
+    background-color: #025040;
+}
+
+#task-list {
+    list-style: none; /*remove os marcadores padrão de uma lista*/
+    padding: 0;
+}
+
+#task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border-bottom: 1px solid #444;
+    font-size: 1rem;
+    background-color: #222;
+    color: white;
+}
+
+/*estiliza os itens da lista de tarefas (<li>) quando a tarefa é marcada como concluída (classe completed é adicionada pelo JavaScript)*/
+#task-list li.completed {
+    text-decoration: line-through; /*aplica uma linha através do texto, o que normalmente indica que algo está concluído ou inativo*/
+    color: #888;
+}
+
+/* Seção de Matérias de Programação */
+.programming-section {
+    padding: 3rem 2rem; /* Mais espaçamento para destacar a seção */
+    background-color: #1a1a1a; /* Fundo escuro */
+    color: white;
+    text-align: center;
+    box-shadow: 0px 6px 23px rgba(125, 0, 241, 0.87);
+    margin-top: 6rem;
+    border-radius: 10px;
+}
+
+.programming-section h2 {
+    font-size: 2rem; /* Título maior para destaque */
+    margin-bottom: 2rem;
+}
+
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas para os quadrados */
+    gap: 30px; /* Espaçamento maior entre os quadrados */
+}
+
+.subject {
+    background-color: rgba(30, 30, 30, 0.95);
+    padding: 2rem; /* Aumentar o espaçamento interno dos quadrados */
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+.subject h3 {
+    color: #87ceeb; /* Títulos com cor azul clara */
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 0.75rem;
+    border-bottom: 1px solid #444;
+    font-size: 1rem;
+    color: white;
+}
+
+ul li.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+/* Estilo para tarefas (tanto gerais quanto específicas) */
+.task-item {
+    cursor: pointer; /* Mãozinha ao passar o mouse */
+    transition: background-color 0.3s ease, transform 0.2s; /* Transição suave */
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: grab; /* Mostra a mão de arrasto */
+}
+
+.task-item:hover {
+    transform: scale(1.02); /* Pequeno efeito de zoom */
+}
+
+.task-item.dragging {
+    opacity: 0.5; /* Feedback visual durante o arrasto */
+}
+
+/* Estilo para tarefas concluídas */
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.completed::before {
+    content: "✔️"; /* Icone de concluído */
+    position: absolute;
+    left: -25px;
+    color: green;
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Transição para o ícone */
+}
+
+.completed-animated::before {
+    opacity: 1; /* Aparecer gradualmente */
+}
+
+/* Efeito de hover para o botão de exclusão */
+.delete-btn {
+    margin-left: 10px;
+    background-color: #ff6666;
+    border: none;
+    color: white;
+    padding: 3px 6px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.delete-btn:hover {
+    background-color: #ff3333;
+}
+
+#change-language-grade {
+    padding: 12px 25px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+#change-language-grade:hover {
+    background-color: #45a049;
+    transform: scale(1.07);
+}
+
+/* Estilos do modal */
+.modal {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro */
+}
+
+.modal-content {
+    background-color: #2e2e2e; /* Fundo escuro para combinar com o tema */
+    color: #d3d3d3; /* Texto em cinza claro */
+    margin: 10% auto;
+    padding: 30px;
+    border: 1px solid #555; /* Borda sutil */
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
+}
+
+.close-button {
+    color: #888;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #ff5c5c; /* Vermelho suave ao passar o mouse */
+}
+
+/* Estilo do botão de confirmação */
+#confirm-change {
+    padding: 12px 25px;
+    background-color: #4CAF50; /* Verde harmonioso com o resto da página */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+#confirm-change:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /* Leve efeito de zoom */
+}
+
+/* Estilo dos rótulos e entrada de texto */
+.modal-content label {
+    color: #accfdd; /* Azul claro harmonioso */
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.modal-content select,
+.modal-content input[type="text"] {
+    width: 80%;
+    padding: 8px;
+    margin: 10px 0;
+    background-color: #333;
+    border: 1px solid #666;
+    border-radius: 5px;
+    color: #dcdcdc;
+    font-size: 14px;
+}
+
+/* Estilizando o bloco de código HTML e de Java */
+.code-block,
+.code-block-java {
+    background-color: #2d2d2d; /* Fundo estilo terminal */
+    color: #dcdcdc;            /* Texto com cor clara */
+    padding-right: 4rem;      /* Padding menor à esquerda */
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace; /* Fonte estilo código */
+    font-size: 1.1rem;
+    line-height: 1.0;          /* Reduzindo o espaçamento entre as linhas */
+    margin-top: 7.3rem;
+    text-align: left;
+    border: 1px solid #444;    /* Borda sutil */
+    max-width: 1000px;         /* Aumenta a largura máxima da caixa */
+    white-space: pre;          /* Preserva quebras de linha e espaços */
+    box-shadow: 0px 6px 23px rgba(241, 28, 0, 0.87);
+}
+
+/* Estilo para o conteúdo de código dentro da div */
+.code-block code {
+    display: block;
+    color: #dcdcdc; /* Cor do texto do código */
+    font-size: 1rem;
+}
+
+/* Estilos coloridos para simular VS Code */
+.code-block code .tag {
+    color: #569cd6; /* Azul para tags HTML */
+}
+
+.code-block code .attribute {
+    color: #d19a66; /* Amarelo para atributos */
+}
+
+.code-block code .string {
+    color: #ce9178; /* Cor de strings */
+}
+
+.code-block code .comment {
+    color: #6a9955; /* Verde para comentários */
+}
+
+/* Estilizando o bloco de código Java */
+.code-block-java {
+    margin: 6rem 0;
+}
+
+/* Estilos de sintaxe Java */
+.code-block-java code .keyword {
+    color: #569cd6; /* Azul para palavras-chave */
+}
+
+.code-block-java code .class-name {
+    color: #4ec9b0; /* Verde para nomes de classes */
+}
+
+.code-block-java code .type {
+    color: #dcdcaa; /* Amarelo claro para tipos */
+}
+
+.code-block-java code .function-name {
+    color: #dcdcaa; /* Amarelo claro para funções */
+}
+
+.code-block-java code .variable {
+    color: #9cdcfe; /* Azul claro para variáveis */
+}
+
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 4.75rem;
+    width: 100%;
+    position: relative; /*mantém o elemento no fluxo normal da página, mas permite ajustes de posição (via top, right, bottom, left), movendo-o relativamente à sua posição original*/
+    bottom: 0;
+    z-index: 2; /*coloca o elemento em uma camada superior, acima de outros elementos com um valor de z-index menor ou sem z-index*/
+    height: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.copy {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+.navbar-social-media {
+    display: flex;
+    align-items: center; 
+}
+.instagram a {
+    color: #accfdd;
+    margin-right: 4rem;
+    transition: color 0.3s ease;
+}
+
+.instagram a:hover {
+    color: #d8bfd8;
+}
+
+
+.twitter-x a {
+    color: #accfdd;
+    margin-right: 4rem; 
+    transition: color 0.3s ease;
+}
+
+.twitter-x a:hover {
+    color: #d8bfd8;
+}
+
+
+.youtube a {
+    color: #accfdd;
+    transition: color 0.3s ease;
+}
+
+.youtube a:hover {
+    color: #d8bfd8;
+}
+
+.end{
+    margin-top: .75rem;
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 1rem;
+}
+
+svg{
+    height: 1.5rem;
+    width: auto;
+}
+
+/* Responsividade para telas menores que 992px (Tablets) */
+@media (max-width: 992px) {
+    /* Ajusta a grade para duas colunas em tablets */
+    .subjects-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+        gap: 20px;
+    }
+}
+
+/* Responsividade para telas menores que 768px (Celulares grandes) */
+@media (max-width: 768px) {
+    /* Ajusta a barra de navegação para uma coluna */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    /* Ajusta os itens à direita da barra de navegação para coluna */
+    .nav-right {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 1rem;
+    }
+
+    /* Limita o contêiner de tarefas e a seção de programação */
+    .todo-container, .programming-section {
+        max-width: 90%;
+        padding: 1rem;
+    }
+
+    /* Ajuste de tamanhos de texto */
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2, h3 {
+        font-size: 1rem;
+    }
+
+    /* Reduz tamanho dos botões */
+    .task-input button, 
+    #change-language-grade,
+    #confirm-change {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Centraliza e ajusta o modal */
+    .modal-content {
+        width: 90%;
+    }
+
+    /* Footer responsivo */
+    .navbar-social-media {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    footer {
+        padding: 2rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Responsividade para telas menores que 600px (Celulares pequenos) */
+@media (max-width: 600px) {
+    /* Configura grade em uma única coluna para celulares pequenos */
+    .subjects-grid {
+        grid-template-columns: 1fr; /* 1 coluna */
+        gap: 15px;
+    }
+}
